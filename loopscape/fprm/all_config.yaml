@@ -1,0 +1,82 @@
+arch:
+  H_cycles: 3
+  H_layers: 0
+  L_cycles: 6
+  L_layers: 2
+  alpha_1_init: 0.75
+  alpha_2_init: 0.25
+  conv_bias: false
+  conv_kernel_size: 3
+  conv_type: conv2d
+  decay_patience: 5
+  eps: 1.0e-08
+  expansion: 4
+  expon_scale: 72.1347520444
+  forward_dtype: bfloat16
+  fp_thresh: 0.1
+  gamma_alpha: 4.0
+  gamma_scale: 16.6666666667
+  hidden_size: 512
+  loss:
+    deep_supervision: true
+    loss_type: stablemax_cross_entropy
+    name: losses@ACTLossHead
+    q_loss_coeff: 0.5
+  max_iter: 12
+  max_iter_dist: det
+  max_iter_eval: 1000
+  mlp_t: false
+  n_backwards_L: 6
+  n_decode_steps: 0
+  name: fixed_point_reasoning.fp_trm_singlez@FPTinyRecursiveReasoningModelSingleZ_ACTV1
+  no_ACT_continue: true
+  norm_placement: none
+  norm_type: pre-norm
+  normalize_input_injection: false
+  num_heads: 8
+  outer_only: false
+  outlier_quantile: 0.25
+  pos_encodings: rope
+  puzzle_emb_len: 16
+  puzzle_emb_ndim: 512
+  residual_scale: input-independent
+  scale_init: 2.0
+  softmax_temp: 1.0
+  stepsize: 1.0
+  stepsize_decay: 0.9
+  variational_dropout: 0.0
+  weight_dropout: 0.0
+beta1: 0.9
+beta2: 0.95
+checkpoint_every_eval: true
+checkpoint_every_n_steps: null
+checkpoint_path: /ptmp/samova/reasoning-model-ablation/checkpoints/reasoning-model-ablation/fptrm_singlez_combined_best_train_det12_eval1000_pnone_lr1e-3_wd0.001_20260518_132719
+data_paths:
+- data/sudoku-extreme-1k-aug-1000
+data_paths_test: []
+ema: true
+ema_rate: 0.999
+epochs: 60000
+eval_interval: 5000
+eval_save_outputs: []
+evaluators: []
+freeze_weights: false
+global_batch_size: 768
+k_eval_max: null
+k_eval_min: null
+k_eval_step: 1
+load_checkpoint: null
+lr: 0.001
+lr_min_ratio: 1.0
+lr_warmup_steps: 2000
+metrics_out: null
+min_eval_interval: 0
+optimizer: adamw
+profile_flops: false
+project_name: reasoning-model-ablation
+puzzle_emb_lr: 0.001
+puzzle_emb_weight_decay: 0.001
+resume_from: null
+run_name: fptrm_singlez_combined_best_train_det12_eval1000_pnone_lr1e-3_wd0.001_20260518_132719
+seed: 0
+weight_decay: 0.001

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while read local_ref local_sha remote_ref remote_sha
+do
+    if [ "$local_ref" != "refs/public-snapshot/current" ] ||        [ "$remote_ref" != "refs/heads/main" ]; then
+        echo "ERROR: only the memoryless snapshot may be pushed to main." >&2
+        echo "Use plain: git push" >&2
+        exit 1
+    fi
+done

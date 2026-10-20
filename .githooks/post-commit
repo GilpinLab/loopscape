@@ -1,0 +1,5 @@
+#!/bin/sh
+
+tree=$(git rev-parse HEAD^{tree}) || exit 1
+commit=$(git log -1 --pretty=%B | git commit-tree "$tree") || exit 1
+git update-ref refs/public-snapshot/current "$commit"

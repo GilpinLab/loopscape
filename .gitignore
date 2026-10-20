@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.DS_Store
+
+# Virtual environments
+.venv
+.vscode
+
+# All large files in the data folder
+data/
+downloaded_checkpoints/
+archive/
+plotting.ipynb
+
+# Large data files
+*.pt
+*.npz
+*.npy
+
+# Development files
+private*
